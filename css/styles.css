@@ -248,6 +248,20 @@ img {
 .subtitle {
   margin-bottom: 50px;
 }
+.what-we-do-item {
+  position: relative;
+}
+.we-do-text {
+  position: absolute;
+  width: 100%;
+  bottom: 3.3px;
+  background-color: rgba(47, 48, 58, 0.8);
+  padding: 27px 0px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
 
 .what-we-do-item:not(:last-child) {
   margin-right: 30px;
@@ -468,19 +482,41 @@ img {
 }
 
 .our-projects li {
-  border-bottom: 1px solid #eeeeee;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.02, 1);
 }
-
 .our-projects li:hover {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.our-projects li:hover .overlay-text {
+  transform: translateY(0);
 }
 
 .our-projects {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+}
+
+.portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 63px 24px;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-title {
@@ -496,4 +532,9 @@ img {
   line-height: 1.88;
   color: var(--gray-text-color);
   padding: 4px 24px 20px;
+}
+
+.projects-border {
+  border: 1px solid #eeeeee;
+  border-top: none;
 }
